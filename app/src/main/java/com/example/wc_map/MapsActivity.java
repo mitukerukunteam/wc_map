@@ -49,14 +49,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         //現在地カメラ
-        CameraUpdate cu;
+       CameraUpdate cu;
         cu = CameraUpdateFactory.newLatLngZoom(
                 new LatLng(43.0675,141.350784), 15);
         //現在地のピン
         LatLng utunomiya =   new LatLng(43.0675,141.350784) ;
         mMap.addMarker(new MarkerOptions().position(utunomiya).title("Marker in utunomiya"));
 
-        mMap.moveCamera(cu);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(utunomiya));
 
     }
 
